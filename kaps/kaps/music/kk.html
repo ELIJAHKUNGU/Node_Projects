@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Player</title>
+</head>
+
+<body>
+
+    <body onload="showSongCover();">
+        <div class="container">
+            <p>Music player</p>
+            <div class="music-details">
+                <div class="cover-img" id="song-cv"></div>
+                <div class="song-details">
+                    <div class="song-name" id="song-name"></div>
+                </div>
+            </div>
+            <button onclick="changeNext();">View Next</button>
+        </div>
+
+        <script>
+            var songCovers = [
+                "img1.jpeg",
+                "img2.jpeg",
+                "img3.jpeg",
+                "img4.jpeg",
+                "img5.jpeg",
+            ];
+
+            var songList = [
+                "Juice WRLD Ft Benny Blanco -  Real Shit",
+                "Benny Blanco Ft Juice WRLD & Brendo Urie - Roses",
+                "Halsey Ft Juice WRLD - Without You",
+                "Ellie Goulding Ft Juice WRLD - Hate Me",
+                "Juice WRLD Ft Lil Uzi Vert - Wasted",
+            ];
+            var index = 0;
+
+            function showSongCover() {
+                var img = document.createElement("img");
+                img.src = songCovers[index];
+                var song = document.createElement("p");
+                song.innerHTML = songList[index];
+                document.getElementById("song-cv").appendChild(img);
+                document.getElementById("song-name").appendChild(song);
+            }
+
+            function changeNext() {
+                var img = document.getElementById("song-cv").getElementsByTagName("img")[0];
+                var song = document
+                    .getElementById("song-name")
+                    .getElementsByTagName("p")[0];
+                index++;
+                index = index % songCovers.length;
+                index = index % songList.length;
+                img.src = songCovers[index];
+                song.innerHTML = songList[index];
+            }
+        </script>
+    </body>
+
+</html>

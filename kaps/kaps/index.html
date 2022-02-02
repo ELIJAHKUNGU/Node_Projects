@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        Convert Set to Array
+    </title>
+</head>
+
+<body>
+    <center>
+        <h1 style="color:green">
+            GeeksforGeeks
+        </h1>
+
+        <script>
+            var gfgSet = new Set();
+            var gfgArray = [
+
+            ];
+
+            gfgSet.add("Geeks");
+            gfgSet.add("for");
+            // duplicate item
+            gfgSet.add("Geeks");
+
+            var someFunction = function(
+                val1, val2, setItself) {
+                gfgArray.push(val1);
+            };
+
+            gfgSet.forEach(someFunction);
+
+            document.write("Array: " + gfgArray);
+        </script>
+    </center>
+</body>
+
+</html>
