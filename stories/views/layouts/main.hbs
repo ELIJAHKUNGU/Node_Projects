@@ -12,6 +12,7 @@
 </head>
 
 <body>
+    {{>_header}}
     
     <div class="container">
         {{{body}}}
@@ -22,6 +23,11 @@
         integrity="sha256-bEIQpI72w9NJuIVhTLFUF2/8uxl0u5800r8ddViuv+o=" crossorigin="anonymous"></script>
 
     <script>
+       
+        M.Sidenav.init(document.querySelector('.sidenav'))
+        //M.FormSelect.init(document.querySelector('#status'))
+        
+    </script>
         
     </script>
 </body>
